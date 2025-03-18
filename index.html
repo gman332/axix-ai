@@ -5,69 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AxiX Ai - AI-Powered Crypto Research</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #0D1117;
-            color: #C9D1D9;
-            text-align: center;
-        }
-        header {
-            background-color: #161B22;
-            padding: 20px;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #58A6FF;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 50px;
-        }
-        .cta {
-            background-color: #238636;
-            padding: 10px 20px;
-            border-radius: 5px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .cta:hover {
-            background-color: #2EA043;
-        }
-        #price-chart canvas {
-            width: 80%;
-            max-width: 600px;
-            margin-top: 20px;
-        }
-        footer {
-            background-color: #161B22;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <script defer src="https://vercel-speed-insights.vercel.app/script.js"></script>
 </head>
 <body>
     <header>
         <nav>
-            <h1>AxiX Ai</h1>
+            <div class="logo">AxiX Ai</div>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#tokenomics">Tokenomics</a></li>
@@ -77,98 +20,21 @@
             </ul>
         </nav>
     </header>
-    
+
     <section id="hero">
-        <h2>AI-Powered Crypto Research</h2>
-        <p>Delivering actionable insights for smarter investments. $AXIX token launching soon!</p>
-        <a href="https://pump.fun" class="cta">Join Now</a>
+        <h1>AI-Powered Crypto Research</h1>
+        <p>Advanced insights for smarter investments. $AXIX token launching soon!</p>
+        <a href="https://pump.fun" class="cta">Buy Now</a>
     </section>
 
-    <section id="about">
-        <h2>About AxiX Ai</h2>
-        <p>AxiX Ai leverages AI to provide real-time market insights, empowering smarter investment decisions.</p>
-    </section>
-
-    <section id="tokenomics">
-        <h2>Tokenomics</h2>
-        <p>Details on supply distribution, token utility, and roadmap.</p>
-    </section>
-    
-    <section id="features">
-        <h2>Features</h2>
-        <ul>
-            <li>✅ AI-driven crypto research</li>
-            <li>✅ Fast, scalable, and secure on Solana</li>
-            <li>✅ Access to exclusive tools & features</li>
-        </ul>
-    </section>
-
-    <section id="how-to-buy">
-        <h2>How to Buy</h2>
-        <p>Step-by-step guide to purchasing $AXIX on Pump.fun</p>
-    </section>
-
-    <section id="community">
-        <h2>Join the Community</h2>
-        <p>Stay updated with our latest news and discussions.</p>
-        <a href="https://t.me/axixai" class="cta">Join Telegram</a>
-        <a href="https://x.com/axixaisol" class="cta">Follow on Twitter</a>
-    </section>
-    
-    <section id="twitter-feed">
-        <h2>Latest Updates</h2>
-        <a class="twitter-timeline" data-height="500" href="https://x.com/axixaisol?ref_src=twsrc%5Etfw">Tweets by AxiX Ai</a> 
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </section>
-    
-    <section id="price-chart">
-        <h2>Live $AXIX Price Chart</h2>
-        <canvas id="cryptoChart"></canvas>
-        <script>
-            async function fetchCryptoData() {
-                const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=axix-token&vs_currencies=usd');
-                const data = await response.json();
-                return data['axix-token'].usd;
-            }
-            
-            async function updateChart(chart) {
-                const price = await fetchCryptoData();
-                const now = new Date().toLocaleTimeString();
-                
-                chart.data.labels.push(now);
-                chart.data.datasets[0].data.push(price);
-                
-                if (chart.data.labels.length > 20) {
-                    chart.data.labels.shift();
-                    chart.data.datasets[0].data.shift();
-                }
-                chart.update();
-            }
-            
-            document.addEventListener("DOMContentLoaded", function() {
-                const ctx = document.getElementById('cryptoChart').getContext('2d');
-                const cryptoChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: [],
-                        datasets: [{
-                            label: 'AXIX Price (USD)',
-                            borderColor: '#58A6FF',
-                            data: [],
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            x: { display: true },
-                            y: { display: true }
-                        }
-                    }
-                });
-                
-                setInterval(() => updateChart(cryptoChart), 5000);
-            });
-        </script>
+    <section id="roadmap">
+        <h2>Roadmap</h2>
+        <div class="roadmap-container">
+            <div class="roadmap-step">🚀 Phase 1: Token Launch & Community Growth</div>
+            <div class="roadmap-step">🛠 Phase 2: AI-Powered Market Insights Beta</div>
+            <div class="roadmap-step">📈 Phase 3: Advanced AI Trading Bot & Staking</div>
+            <div class="roadmap-step">🌎 Phase 4: Global Expansion & AI-Powered Research</div>
+        </div>
     </section>
 
     <footer>
