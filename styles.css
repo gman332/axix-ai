@@ -1,0 +1,65 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0D1117;
+    color: #C9D1D9;
+    text-align: center;
+}
+
+header {
+    background-color: #161B22;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #58A6FF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 50px;
+}
+
+.cta {
+    background-color: #238636;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta:hover {
+    background-color: #2EA043;
+}
+
+#price-chart canvas {
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #161B22;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
